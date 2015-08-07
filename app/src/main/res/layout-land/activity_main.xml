@@ -1,0 +1,170 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Input your url:"
+            android:textColor="@color/button_material_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:id="@+id/url_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="35dp"
+                android:hint="http://www.test.com/?test=true"
+                android:nextFocusDown="@id/create_model_btn"
+                android:textSize="23sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="#ffcccccc"
+                />
+
+            <ImageView
+                android:id="@+id/clear_url_iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="3dp"
+                android:src="@drawable/icon_delete_circle_selected"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="30dp"
+            android:text="Setting request Methods:"
+            android:textColor="@color/button_material_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <CheckedTextView
+            android:id="@+id/is_post_cTv"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="is post request"
+            android:textColor="@color/button_material_dark"
+            android:textSize="22sp"
+            />
+
+        <CheckedTextView
+            android:id="@+id/has_model_cTv"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="has json model"
+            android:textColor="@color/button_material_dark"
+            android:textSize="22sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="40dp"
+            android:text="Choice default params:"
+            android:textColor="@color/button_material_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:id="@+id/option_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:id="@+id/code_sv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="#272822"
+        android:paddingLeft="25dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/code_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/copy_method_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@android:color/transparent"
+                android:text="copy"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                />
+
+            <kale.http.framework.view.ShaderEditor
+                android:id="@+id/method_sd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textScaleX="1.2"
+                android:lineSpacingExtra="4dp"
+                tools:text="hello \n add"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="25dp"
+                android:background="@color/white"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

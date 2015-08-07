@@ -29,6 +29,11 @@ public abstract class HttpRequest {
         doPost(url, null, modelClass, onSuccess, onError);
     }
 
+    public <Model> void doPost(@NonNull String url, @Nullable Class<Model> modelClass,
+            @NonNull final HttpResponse<Model> response) {
+        doPost(url, null, modelClass,response );
+    }
+    
     public <Model> void doPost(@NonNull String url, @Nullable HashMap<String, String> map) {
         doPost(url, map, null, null, null); // 强制赋空
     }
