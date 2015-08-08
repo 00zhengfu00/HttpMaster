@@ -1,1 +1,1 @@
-include ':app', ':json2java', ':lib'
+include ':app', ':lib'
