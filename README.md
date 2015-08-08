@@ -3,6 +3,7 @@
 
 ### 前言  
 Android的网络操作是很常见的，而且网络请求的方法体都是类似的，我希望能创造一个工具，通过一个回车键就写好网络请求的方法体，生成用于gson解析的model，顺便再写好测试用例什么的。希望能通过这个工具减少模板式的代码。于是HttpMaster就诞生了！   
+本工具中产生gson的model的算法是copy：https://jsontojava.appspot.com/ 中算法实现的，感谢这个优秀的项目。
 
 ### 示例   
 ![](./demo/httpmaster.gif)
