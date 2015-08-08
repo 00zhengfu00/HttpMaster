@@ -86,7 +86,7 @@ public class Presenter {
     }
 
     /**
-     * Post
+     * 生成Post方法体的方法
      *
      * // 无参数
      * private void postFunction(HttpResponse<RootClass> response) {
@@ -100,6 +100,9 @@ public class Presenter {
      * map.put("param", param);
      * mHttpRequest.doPost("url", map, null, response);
      * }
+     * 
+     * defaultParamMap 默认参数
+     * originParamMap 全部的请求参数
      */
     protected String getPostMethodBlock(String url, Map<String, String> defaultParamMap, Map<String, String> originParamMap,
             StringBuilder sb, boolean hasModel) {
@@ -137,7 +140,7 @@ public class Presenter {
     }
 
     /**
-     * Get
+     * 生成Get方法体的方法
      *
      * // 无参数
      * private void getFunction(HttpResponse<RootClass> response) {
@@ -149,6 +152,9 @@ public class Presenter {
      * mHttpRequest.doGet("url?
      * param="+param+"&defaultKey=defaultValue", null, response);
      * }
+     * 
+     * defaultParamMap 默认参数
+     * originParamMap 全部的请求参数
      */
     protected String getGetMethodBlock(String url, Map<String, String> defaultParamMap, Map<String, String> originParamMap,
             StringBuilder sb, boolean hasModel) {
