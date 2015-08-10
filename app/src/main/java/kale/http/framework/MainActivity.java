@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
     private ShaderEditor methodEt;
 
     private LinearLayout codeLl;
-    
+
     private Button copyMethodBtn;
 
     private HttpRequest mHttpRequest;
 
-   
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         mHttpRequest = new OldHttpFrameWork();
         // 初始变量结束
     }
-    
+
     private void createMethodsBlock() {
         if (TextUtils.isEmpty(url)) {
             Toast.makeText(MainActivity.this, "url不能为空哦~", Toast.LENGTH_SHORT).show();

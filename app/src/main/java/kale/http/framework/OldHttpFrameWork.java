@@ -26,7 +26,7 @@ public class OldHttpFrameWork extends HttpRequest {
     public <Model> void doGet(@NonNull final String url, @Nullable Class<Model> modelClass, @NonNull final HttpResponse<Model> response) {
         doHttp(url, "get", null, modelClass, response); // 通过继承的方法来调用原先的网络框架
     }
-
+    
     /**
      * 原先的网络框架，需要做一定的修改
      */
@@ -43,11 +43,8 @@ public class OldHttpFrameWork extends HttpRequest {
                 @Override
                 public void onRequestComplete(String result) {
                     if (modelClass != null) {
-                        if (modelClass.equals(result.getClass())) {
-                            response.onSuccess((Model) result);
-                        } else {
-                            response.onSuccess(MyApplication.getGson().fromJson(result, modelClass));
-                        }
+                        response.onSuccess(modelClass.equals(result.getClass()) ? 
+                                (Model) result : MyApplication.getGson().fromJson(result, modelClass));
                     } else {
                         response.onSuccess(null);
                     }
@@ -63,11 +60,8 @@ public class OldHttpFrameWork extends HttpRequest {
                 @Override
                 public void onRequestComplete(String result) {
                     if (modelClass != null) {
-                        if (modelClass.equals(result.getClass())) {
-                            response.onSuccess((Model) result);
-                        } else {
-                            response.onSuccess(MyApplication.getGson().fromJson(result, modelClass));
-                        }
+                        response.onSuccess(modelClass.equals(result.getClass()) ?
+                                (Model) result : MyApplication.getGson().fromJson(result, modelClass));
                     } else {
                         response.onSuccess(null);
                     }
